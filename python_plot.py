@@ -15,3 +15,6 @@ ylabel("y variable", fontsize=30)
 pylab.savefig('sample.pdf')
 plt.show()
 
+#The following is used when set figure window to some fixed locations
+mngr = plt.get_current_fig_manager()
+mngr.window.setGeometry(0,0,500, 500)
