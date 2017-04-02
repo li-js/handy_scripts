@@ -18,3 +18,7 @@ plt.show()
 #The following is used when set figure window to some fixed locations
 mngr = plt.get_current_fig_manager()
 mngr.window.setGeometry(0,0,500, 500)
+
+# color list for distinct plots
+from matplotlib.pyplot import cm 
+color_lists=cm.rainbow(np.linspace(0,1,len(algos)))
