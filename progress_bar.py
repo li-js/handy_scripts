@@ -10,6 +10,10 @@ from progressbar import ProgressBar, Bar, BouncingBar, Counter, ETA, Percentage,
 counter_total=500
 widgets=['Loading ..', Bar(), Counter(), '/{} |'.format(counter_total), Percentage(), ' |', Timer(), ' |', ETA()]
 pbar = ProgressBar(widgets=widgets, maxval=counter_total)
-for x in pbar(range(counter_total)): time.sleep(0.02)
+for x in pbar(xrange(counter_total)): time.sleep(0.02)
 
-        
+
+pbar.start()
+for x in xrange(counter_total):
+        pbar.update(x)
+        time.sleep(0.02)
