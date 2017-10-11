@@ -22,5 +22,5 @@ for x in xrange(counter_total):
         
 # yet another way of doing it        
 from tqdm import tqdm
-for _ in tqdm(xrange(counter_total), total=counter_total):
+for _ in tqdm(xrange(counter_total)):
         time.sleep(0.02)
