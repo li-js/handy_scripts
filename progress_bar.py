@@ -20,7 +20,22 @@ for x in xrange(counter_total):
         time.sleep(0.02)
 
         
-# yet another way of doing it        
+# yet another way of doing it with minimal coding      
 from tqdm import tqdm
 for _ in tqdm(xrange(counter_total)):
         time.sleep(0.02)
+        
+        
+# tqdm with dynamic information during the progress       
+from tqdm import trange, tqdm
+from random import random
+
+pbar = tqdm(xrange(100), desc='Train epoch 1')
+pbar = trange(100, desc='Train epoch 1')
+
+for i in pbar:
+    # pbar.set_description('Train on batch %i' % i)      # Description will be displayed on the left   
+    # Postfix will be displayed on the right, and will format automatically based on argument's datatype
+    pbar.set_postfix(loss='%0.3f'%random(), acc='%0.3f'%random(), loss2='%0.3f'%random())     
+    time.sleep(0.1)        
+pbar.close()
