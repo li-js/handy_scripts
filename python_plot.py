@@ -22,3 +22,10 @@ mngr.window.setGeometry(0,0,500, 500)
 # color list for distinct plots
 from matplotlib.pyplot import cm 
 color_list=cm.rainbow(np.linspace(0,1,len(algos)))
+
+
+# Name and auto rotate the x-ticks
+plt.legend(handles=legend_handles,  scatterpoints=1, loc='lower left', fontsize=15)
+plt.xticks(range(5)), ['names']*5, fontsize=15)
+plt.yticks(fontsize=15)
+fig.autofmt_xdate()
