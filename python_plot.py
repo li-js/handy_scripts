@@ -1,9 +1,9 @@
-# For machine with no display environment
+# For machines with no display environment
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-# For machine with no display environment
+# For machine with display environment
 from pylab import plt
 
 # Begin plotting ..
