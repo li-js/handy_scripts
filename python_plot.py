@@ -1,18 +1,25 @@
-from pylab import *
-figure(figsize=(12, 8))
+# For machine with no display environment
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 
-plot(x,y)
-plot(x2,y2)
+# For machine with no display environment
+from pylab import plt
 
-legend(['l1', 'l2'],  loc=0,fontsize=20)
-grid()
-gca().set_xlim((0, 55))
-xticks(fontsize=20)
+# Begin plotting ..
+fig = plt.figure(figsize=(12, 8))
+plt.plot(x,y)
+plt.plot(x2,y2)
+
+plt.legend(['l1', 'l2'],  loc=0,fontsize=20)
+plt.gca().grid()
+plt.gca().set_xlim((0, 55))
+plt.xticks(fontsize=20)
 #gca().set_ylim((0, 2000))
-yticks(fontsize=20)
-xlabel("x variable", fontsize=30)
-ylabel("y variable", fontsize=30)
-pylab.savefig('sample.pdf')
+plt.yticks(fontsize=20)
+plt.xlabel("x variable", fontsize=30)
+plt.ylabel("y variable", fontsize=30)
+plt.savefig('sample.pdf') 
 plt.show()
 
 #The following is used when set figure window to some fixed locations
