@@ -36,3 +36,16 @@ plt.legend(handles=legend_handles,  scatterpoints=1, loc='lower left', fontsize=
 plt.xticks(range(5), ['names']*5, fontsize=15)
 plt.yticks(fontsize=15)
 fig.autofmt_xdate()
+
+# Plot rect 
+plt.imshow(im)
+plt.gca().add_patch(   plt.Rectangle((rect['x1'], rect['y1']),
+                                      rect['x2']-rect['x1'],
+                                      rect['y2']-rect['y1'], 
+                                      fill=False, edgecolor='g', linewidth=3) )
+plt.gca().text(rect['x1'], rect['y1'] - 2, 
+          '{:.3f}'.format(rect['conf']),
+          bbox=dict(facecolor='blue', alpha=0.5),
+          fontsize=14, color='white')
+plt.title(('{} detections with p({} | box) >= {:.1f}').format('face', 'face' ,thresh),fontsize=14)
+
